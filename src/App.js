@@ -65,10 +65,12 @@ function App() {
 
       <label>
         Salinity
-        <input
-          name="salinity"
+        <TextField
+          id="salinity"
           type="number"
+          name="salinity"
           value={salinity}
+          placeholder="Enter salinity"
           onChange={(e) => setSalinity(parseFloat(e.target.value))}
         />
       </label>
