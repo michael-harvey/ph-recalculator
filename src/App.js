@@ -52,17 +52,6 @@ function App() {
     );
   }
 
-  // function calculateConversionPh() {
-  //   return calculateCorrectedPh() - Math.log10(1 - 0.00106 * salinity);
-  // }
-
-  // function calculatePhTotal() {
-  //   return (
-  //     calculateConversionPh() -
-  //     Math.log10(calculateSO4Total() / calculatePotassiumBisulfate())
-  //   );
-  // }
-
   return (
     <div className="App">
       <h1>pH Recalculator</h1>
@@ -111,10 +100,7 @@ function App() {
         <br /> SO4 total: {calculateSO4Total()}
         <br /> Potassium bisulfate: {calculatePotassiumBisulfate()}
         <br /> Total pH: {calculateTotalPh()}
-        {/* <br /> Conversion pH: {calculateConversionPh()}
-        <br /> pH total: {calculatePhTotal()} */}
       </p>
-
       <footer>
         <p>
           Made with{" "}
