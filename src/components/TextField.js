@@ -1,5 +1,8 @@
 import React from "react";
 
+// TODO: field styles
+// TODO: bring label in
+// TODO: proptypes
 function InputField({ id, type, name, value, placeholder, onChange }) {
   return (
     <input
