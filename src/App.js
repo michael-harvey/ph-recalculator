@@ -7,23 +7,16 @@ function App() {
   const [temperature, setTemperature] = useState(25);
 
   // correct pH (NIST/NBS) levels
-  function calculatePh() {
-    return ph + (temperature - 25) * 0.0159;
-  }
+  const calculatePh = () => ph + (temperature - 25) * 0.0159;
 
   // convert celcius to kelvin units
-  function calculateKelvin() {
-    return temperature + 273.15;
-  }
+  const calculateKelvin = () => temperature + 273.15;
 
-  function calculateIonicStrength() {
-    return (19.924 * salinity) / (1000 - 1.005 * salinity);
-  }
+  const calculateIonicStrength = () =>
+    (19.924 * salinity) / (1000 - 1.005 * salinity);
 
   // calculate sulfate (SO4)
-  function calculateSO4Total() {
-    return (0.14 / 96.062) * (salinity / 1.80655);
-  }
+  const calculateSO4Total = () => (0.14 / 96.062) * (salinity / 1.80655);
 
   // calculate potassium bisulfate
   function calculatePotassiumBisulfate() {
@@ -45,12 +38,9 @@ function App() {
     );
   }
 
-  function calculateTotalPh() {
-    return (
-      calculatePh() -
-      Math.log10(calculateSO4Total() / calculatePotassiumBisulfate())
-    );
-  }
+  const calculateTotalPh = () =>
+    calculatePh() -
+    Math.log10(calculateSO4Total() / calculatePotassiumBisulfate());
 
   return (
     <div className="App">
