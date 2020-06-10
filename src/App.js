@@ -77,10 +77,12 @@ function App() {
 
       <label>
         Temperature (°C)
-        <input
-          name="temperature"
+        <TextField
+          id="temperature"
           type="number"
+          name="temperature"
           value={temperature}
+          placeholder="Enter temperature"
           onChange={(e) => setTemperature(parseFloat(e.target.value))}
         />
       </label>
