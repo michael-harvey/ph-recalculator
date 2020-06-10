@@ -81,11 +81,6 @@ function App() {
       </label>
 
       <p>
-        pH: {ph}
-        <br /> Salinity:{salinity}
-        <br /> Temperature:{temperature}
-        <br /> Corrected pH: {calculatePh()}
-        <br /> Kelvin: {calculateKelvin()}
         <br /> Ionic strength: {calculateIonicStrength()}
         <br /> SO4 total: {calculateSO4Total()}
         <br /> Potassium bisulfate: {calculatePotassiumBisulfate()}
