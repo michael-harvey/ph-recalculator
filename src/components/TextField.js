@@ -1,6 +1,6 @@
 import React from "react";
 
-function TextField({ id, type, name, value, placeholder, onChange }) {
+function InputField({ id, type, name, value, placeholder, onChange }) {
   return (
     <input
       id={id}
@@ -13,4 +13,4 @@ function TextField({ id, type, name, value, placeholder, onChange }) {
   );
 }
 
-export default TextField;
+export default InputField;
