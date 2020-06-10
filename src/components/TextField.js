@@ -1,8 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 // TODO: field styles
 // TODO: bring label in
-// TODO: proptypes
 function InputField({ id, type, name, value, placeholder, onChange }) {
   return (
     <input
@@ -15,5 +15,14 @@ function InputField({ id, type, name, value, placeholder, onChange }) {
     />
   );
 }
+
+InputField.propTypes = {
+  id: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+};
 
 export default InputField;
