@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TextField from "./components/TextField";
 import "./App.css";
 
 function App() {
@@ -52,10 +53,12 @@ function App() {
 
       <label>
         pH<sub>NIST/NBS</sub>
-        <input
-          name="ph"
+        <TextField
+          id="ph"
           type="number"
+          name="ph"
           value={ph}
+          placeholder="Enter pH"
           onChange={(e) => setPh(parseFloat(e.target.value))}
         />
       </label>
