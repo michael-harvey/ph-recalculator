@@ -81,7 +81,7 @@ function App() {
       </label>
 
       <p>
-        <br /> Ionic strength: {calculateIonicStrength()}
+        Ionic strength: {calculateIonicStrength()}
         <br /> SO4 total: {calculateSO4Total()}
         <br /> Potassium bisulfate: {calculatePotassiumBisulfate()}
         <br /> Total pH: {calculateTotalPh()}
