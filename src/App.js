@@ -3,6 +3,7 @@ import TextField from "./components/TextField";
 import "./App.css";
 
 // TODO: add ability to add more fields
+// TODO: colocate field state to individual wrapper component
 
 function App() {
   const [ph, setPh] = useState(8.1);
