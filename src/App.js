@@ -4,6 +4,7 @@ import "./App.css";
 
 // TODO: add ability to add more fields
 // TODO: colocate field state to individual wrapper component
+// TODO: keep state array for each set of fields
 
 function App() {
   const [ph, setPh] = useState(8.1);
