@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import TextField from "./components/TextField";
 import "./App.css";
 
+// TODO: add ability to add more fields
+
 function App() {
   const [ph, setPh] = useState(8.1);
   const [salinity, setSalinity] = useState(35);
