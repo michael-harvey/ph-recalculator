@@ -8,9 +8,9 @@ import "./App.css";
 
 const initialState = [
   {
-    ph: 8.1,
-    salinity: 35,
-    temperature: 25,
+    ph: 0,
+    salinity: 0,
+    temperature: 0,
   },
 ];
 
@@ -24,9 +24,11 @@ function App() {
         <sub>T</sub>
       </p>
 
-      {fields.map((field) => (
-        <FieldGroup {...field} />
-      ))}
+      {fields.length && fields.map((field) => <FieldGroup {...field} />)}
+
+      <button onClick={() => setFields([...fields, initialState])}>
+        Add field group
+      </button>
 
       <footer>
         <p>
