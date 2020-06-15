@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import FieldGroup from "./components/FieldGroup";
 import "./App.css";
 
-// TODO: add ability to add more fields
+// TODO: add ability to remove fields
 // TODO: colocate field state to individual wrapper component
-// TODO: keep state array for each set of fields
 
 const initialState = [
   {
