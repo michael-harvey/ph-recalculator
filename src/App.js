@@ -4,6 +4,7 @@ import "./App.css";
 
 // TODO: add ability to remove fields
 // TODO: colocate field state to individual wrapper component
+// TODO: make button component
 let id = 0;
 const initialState = [
   {
