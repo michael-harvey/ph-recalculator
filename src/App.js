@@ -28,7 +28,7 @@ function App() {
       {fields.length &&
         fields.map((field) => <FieldGroup key={field.id} {...field} />)}
 
-      <button onClick={() => setFields([...fields, initialState])}>
+      <button onClick={() => setFields([...fields, ...initialState])}>
         Add field group
       </button>
 
