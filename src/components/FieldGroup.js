@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import TextField from "./TextField";
 
-// TODO: add ability to add more fields
-// TODO: colocate field state to individual wrapper component
-// TODO: keep state array for each set of fields
-
-function FieldGroup() {
-  const [ph, setPh] = useState(8.1);
-  const [salinity, setSalinity] = useState(35);
-  const [temperature, setTemperature] = useState(25);
+function FieldGroup(props) {
+  console.log(props);
+  const [ph, setPh] = useState(props.ph);
+  const [salinity, setSalinity] = useState(props.salinity);
+  const [temperature, setTemperature] = useState(props.temperature);
 
   // correct pH (NIST/NBS) levels
   const calculatePh = () => ph + (temperature - 25) * 0.0159;
