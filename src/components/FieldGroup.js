@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TextField from "./TextField";
 
+// TODO: move state to parent
+// TODO: drop drill state methods setPh, setSalinity, setTemperature
 function FieldGroup(props) {
   console.log(props);
   const [ph, setPh] = useState(props.ph);
