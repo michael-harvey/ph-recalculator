@@ -6,7 +6,18 @@ import "./App.css";
 // TODO: colocate field state to individual wrapper component
 // TODO: keep state array for each set of fields
 
+let id = 0;
+const initialState = [
+  {
+    id,
+  },
+  {
+    id,
+  },
+];
+
 function App() {
+  const [fields, setFields] = useState(initialState);
   return (
     <div className="App">
       <h1>pH Recalculator</h1>
@@ -15,7 +26,9 @@ function App() {
         <sub>T</sub>
       </p>
 
-      <FieldGroup />
+      {fields.map(() => (
+        <FieldGroup />
+      ))}
 
       <footer>
         <p>
