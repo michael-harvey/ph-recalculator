@@ -6,13 +6,11 @@ import "./App.css";
 // TODO: colocate field state to individual wrapper component
 // TODO: keep state array for each set of fields
 
-let id = 0;
 const initialState = [
   {
-    id,
-  },
-  {
-    id,
+    ph: 8.1,
+    salinity: 35,
+    temperature: 25,
   },
 ];
 
@@ -26,8 +24,8 @@ function App() {
         <sub>T</sub>
       </p>
 
-      {fields.map(() => (
-        <FieldGroup />
+      {fields.map((field) => (
+        <FieldGroup {...field} />
       ))}
 
       <footer>
