@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // TODO: field styles
+// TODO: handle errors
 function InputField({ label, id, type, name, value, placeholder, onChange }) {
   return (
     <div className="field">
@@ -15,7 +16,7 @@ function InputField({ label, id, type, name, value, placeholder, onChange }) {
         placeholder={placeholder}
         onChange={onChange}
       />
-      <span className="field__error">{error}</span>
+      <span className="field__error"></span>
     </div>
   );
 }
