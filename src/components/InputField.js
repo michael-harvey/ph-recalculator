@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // TODO: field styles
-// TODO: bring label in
 function InputField({ label, id, type, name, value, placeholder, onChange }) {
   return (
     <div className="field">
