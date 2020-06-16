@@ -46,36 +46,38 @@ function FieldGroup(props) {
     Math.log10(calculateSO4Total() / calculatePotassiumBisulfate());
 
   return (
-    <div>
-      <InputField
-        label="pH<sub>NIST/NBS</sub>"
-        id="ph"
-        type="number"
-        name="ph"
-        value={ph}
-        placeholder="Enter pH"
-        onChange={(e) => setPh(parseFloat(e.target.value))}
-      />
+    <div className="fieldgroup">
+      <div className="fieldgroup__wrapper">
+        <InputField
+          label="pH<sub>NIST/NBS</sub>"
+          id="ph"
+          type="number"
+          name="ph"
+          value={ph}
+          placeholder="Enter pH"
+          onChange={(e) => setPh(parseFloat(e.target.value))}
+        />
 
-      <InputField
-        label="Salinity"
-        id="salinity"
-        type="number"
-        name="salinity"
-        value={salinity}
-        placeholder="Enter salinity"
-        onChange={(e) => setSalinity(parseFloat(e.target.value))}
-      />
+        <InputField
+          label="Salinity"
+          id="salinity"
+          type="number"
+          name="salinity"
+          value={salinity}
+          placeholder="Enter salinity"
+          onChange={(e) => setSalinity(parseFloat(e.target.value))}
+        />
 
-      <InputField
-        label="Temperature (°C)"
-        id="temperature"
-        type="number"
-        name="temperature"
-        value={temperature}
-        placeholder="Enter temperature"
-        onChange={(e) => setTemperature(parseFloat(e.target.value))}
-      />
+        <InputField
+          label="Temperature (°C)"
+          id="temperature"
+          type="number"
+          name="temperature"
+          value={temperature}
+          placeholder="Enter temperature"
+          onChange={(e) => setTemperature(parseFloat(e.target.value))}
+        />
+      </div>
 
       <p>
         Ionic strength: {calculateIonicStrength()}
