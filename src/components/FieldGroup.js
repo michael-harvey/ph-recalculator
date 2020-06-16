@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TextField from "./TextField";
+import InputField from "./InputField";
 
 // TODO: move state to parent
 // TODO: drop drill state methods setPh, setSalinity, setTemperature
@@ -47,43 +47,35 @@ function FieldGroup(props) {
 
   return (
     <div>
-      <div>
-        <label>
-          pH<sub>NIST/NBS</sub>
-        </label>
-        <TextField
-          id="ph"
-          type="number"
-          name="ph"
-          value={ph}
-          placeholder="Enter pH"
-          onChange={(e) => setPh(parseFloat(e.target.value))}
-        />
-      </div>
+      <InputField
+        label="pH<sub>NIST/NBS</sub>"
+        id="ph"
+        type="number"
+        name="ph"
+        value={ph}
+        placeholder="Enter pH"
+        onChange={(e) => setPh(parseFloat(e.target.value))}
+      />
 
-      <div>
-        <label>Salinity</label>
-        <TextField
-          id="salinity"
-          type="number"
-          name="salinity"
-          value={salinity}
-          placeholder="Enter salinity"
-          onChange={(e) => setSalinity(parseFloat(e.target.value))}
-        />
-      </div>
+      <InputField
+        label="Salinity"
+        id="salinity"
+        type="number"
+        name="salinity"
+        value={salinity}
+        placeholder="Enter salinity"
+        onChange={(e) => setSalinity(parseFloat(e.target.value))}
+      />
 
-      <div>
-        <label>Temperature (°C)</label>
-        <TextField
-          id="temperature"
-          type="number"
-          name="temperature"
-          value={temperature}
-          placeholder="Enter temperature"
-          onChange={(e) => setTemperature(parseFloat(e.target.value))}
-        />
-      </div>
+      <InputField
+        label="Temperature (°C)"
+        id="temperature"
+        type="number"
+        name="temperature"
+        value={temperature}
+        placeholder="Enter temperature"
+        onChange={(e) => setTemperature(parseFloat(e.target.value))}
+      />
 
       <p>
         Ionic strength: {calculateIonicStrength()}
