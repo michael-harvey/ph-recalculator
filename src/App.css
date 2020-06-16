@@ -1,4 +1,23 @@
+/* color palette used: https://coolors.co/89d2dc-6564db-232ed1-101d42-0d1317 */
+
+:root {
+  --middle-blue: hsla(187, 54%, 70%, 1);
+  --slate-blue: hsla(241, 62%, 63%, 1);
+  --persian-blue: hsla(236, 71%, 48%, 1);
+  --oxford-blue: hsla(224, 61%, 16%, 1);
+  --rich-black-fogra-29: hsla(204, 28%, 7%, 1);
+}
+
 body {
   max-width: 1000px;
   margin: 0 auto;
+  background-color: var(--oxford-blue);
+  color: var(--middle-blue);
+}
+
+input {
+  border: 3px solid var(--slate-blue);
+  height: 50px;
+  border-radius: 10px;
+  background-color: transparent;
 }
