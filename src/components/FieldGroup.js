@@ -46,9 +46,11 @@ function FieldGroup(props) {
     Math.log10(calculateSO4Total() / calculatePotassiumBisulfate());
 
   return (
-    <div className="App">
-      <label>
-        pH<sub>NIST/NBS</sub>
+    <div>
+      <div>
+        <label>
+          pH<sub>NIST/NBS</sub>
+        </label>
         <TextField
           id="ph"
           type="number"
@@ -57,10 +59,10 @@ function FieldGroup(props) {
           placeholder="Enter pH"
           onChange={(e) => setPh(parseFloat(e.target.value))}
         />
-      </label>
+      </div>
 
-      <label>
-        Salinity
+      <div>
+        <label>Salinity</label>
         <TextField
           id="salinity"
           type="number"
@@ -69,10 +71,10 @@ function FieldGroup(props) {
           placeholder="Enter salinity"
           onChange={(e) => setSalinity(parseFloat(e.target.value))}
         />
-      </label>
+      </div>
 
-      <label>
-        Temperature (°C)
+      <div>
+        <label>Temperature (°C)</label>
         <TextField
           id="temperature"
           type="number"
@@ -81,7 +83,7 @@ function FieldGroup(props) {
           placeholder="Enter temperature"
           onChange={(e) => setTemperature(parseFloat(e.target.value))}
         />
-      </label>
+      </div>
 
       <p>
         Ionic strength: {calculateIonicStrength()}
