@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 
-// TODO: move state to parent
-// TODO: drop drill state methods setPh, setSalinity, setTemperature
+// TODO: copy to clipboard for 'Total pH'
+// TODO: add remove field group functionality
 function FieldGroup(props) {
   console.log(props);
   const [ph, setPh] = useState(props.ph);
