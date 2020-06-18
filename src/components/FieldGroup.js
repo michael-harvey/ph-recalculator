@@ -79,12 +79,18 @@ function FieldGroup(props) {
         />
       </div>
 
-      <p>
-        Ionic strength: {calculateIonicStrength()}
-        <br /> SO4 total: {calculateSO4Total()}
-        <br /> Potassium bisulfate: {calculatePotassiumBisulfate()}
-        <br /> Total pH: {calculateTotalPh()}
-      </p>
+      <table>
+        <th>Ionic strength:</th>
+        <th>SO4 total:</th>
+        <th>Potassium bisulfate:</th>
+        <th>Total pH:</th>
+        <tbody>
+          <td>{calculateIonicStrength()}</td>
+          <td>{calculateSO4Total()}</td>
+          <td>{calculatePotassiumBisulfate()}</td>
+          <td>{calculateTotalPh()}</td>
+        </tbody>
+      </table>
     </div>
   );
 }
