@@ -8,21 +8,46 @@
   --rich-black-fogra-29: hsla(204, 28%, 7%, 1);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 100px;
+}
+
 body {
   max-width: 1000px;
-  margin: 0 auto;
-  background-color: var(--oxford-blue);
+  margin: 50px auto;
+  font-size: 18px;
   color: var(--middle-blue);
-  font-size: 16px;
+  background-color: var(--oxford-blue);
 }
 
 input {
-  border: 3px solid var(--slate-blue);
-  height: 50px;
-  border-radius: 10px;
-  background-color: transparent;
-  color: var(--middle-blue);
+  padding: 20px;
   font-size: 20px;
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  border: 3px solid var(--slate-blue);
+  border-radius: 10px;
+  appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: white;
 }
 
 .field {
@@ -30,7 +55,24 @@ input {
   flex-direction: column;
 }
 
+.fieldgroup {
+  margin-bottom: 50px;
+}
+
 .fieldgroup__wrapper {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  color: var(--middle-blue);
+  font-weight: bold;
+  background-color: transparent;
+  border: 3px solid var(--middle-blue);
+  border-radius: 10px;
+  appearance: none;
+  cursor: pointer;
 }
