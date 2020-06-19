@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 function InputField({ label, id, type, name, value, placeholder, onChange }) {
   return (
     <div className="field">
-      <label className="field__label" for={id}>
+      <label className="field__label" htmlFor={id}>
         {label}
       </label>
       <input
