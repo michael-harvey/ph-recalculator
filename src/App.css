@@ -23,8 +23,10 @@ h1 {
 }
 
 body {
-  max-width: 1000px;
+  width: 1000px;
+  max-width: 100%;
   margin: 50px auto;
+  padding: 20px;
   font-size: 18px;
   color: var(--middle-blue);
   background-color: var(--oxford-blue);
@@ -76,6 +78,15 @@ button {
   border-radius: 10px;
   appearance: none;
   cursor: pointer;
+}
+
+button + button {
+  margin-left: 30px;
+}
+
+button:hover {
+  border-color: var(--slate-blue);
+  color: white;
 }
 
 table {
