@@ -6,6 +6,7 @@ import "./App.css";
 // TODO: colocate field state to individual wrapper component
 // TODO: make button component
 // TODO: exportable CSV?
+// TODO: add function to remove field set from state
 let id = 0;
 const initialState = [
   {
