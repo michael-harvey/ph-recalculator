@@ -33,6 +33,10 @@ function App() {
         Add field group
       </button>
 
+      <button onClick={() => setFields([...fields, ...initialState])}>
+        Remove field group
+      </button>
+
       <footer>
         <p>
           Made with{" "}
