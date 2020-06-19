@@ -4,7 +4,6 @@ import InputField from "./InputField";
 // TODO: copy to clipboard for 'Total pH'
 // TODO: add remove field group functionality
 function FieldGroup(props) {
-  console.log(props);
   const [ph, setPh] = useState(props.ph);
   const [salinity, setSalinity] = useState(props.salinity);
   const [temperature, setTemperature] = useState(props.temperature);
@@ -41,17 +40,23 @@ function FieldGroup(props) {
     );
   }
 
-  const calculateTotalPh = () =>
-    calculatePh() -
-    Math.log10(calculateSO4Total() / calculatePotassiumBisulfate());
+  const calculateTotalPh = () => {
+    return (
+      calculatePh() -
+      Math.log10(calculateSO4Total() / calculatePotassiumBisulfate())
+    );
+  };
+
+  const hasAllValues = !!(ph && salinity && temperature);
 
   return (
     <div className="fieldgroup">
-      <div className="fieldgroup__wrapper">
+      <form className="fieldgroup__wrapper" noValidate>
         <InputField
           label="pH<sub>NIST/NBS</sub>"
           id="ph"
           type="number"
+          step=".01"
           name="ph"
           value={ph}
           placeholder="Enter pH"
@@ -77,18 +82,34 @@ function FieldGroup(props) {
           placeholder="Enter temperature"
           onChange={(e) => setTemperature(parseFloat(e.target.value))}
         />
-      </div>
+      </form>
 
       <table>
-        <th>Ionic strength:</th>
-        <th>SO4 total:</th>
-        <th>Potassium bisulfate:</th>
-        <th>Total pH:</th>
+        <thead>
+          <tr>
+            <th>Ionic strength:</th>
+            <th>SO4 total:</th>
+            <th>Potassium bisulfate:</th>
+            <th>Total pH:</th>
+          </tr>
+        </thead>
         <tbody>
-          <td>{calculateIonicStrength()}</td>
-          <td>{calculateSO4Total()}</td>
-          <td>{calculatePotassiumBisulfate()}</td>
-          <td>{calculateTotalPh()}</td>
+          <tr>
+            <td>{hasAllValues ? calculateIonicStrength() : "-"}</td>
+            <td>{hasAllValues ? calculateSO4Total() : "-"}</td>
+            <td>{hasAllValues ? calculatePotassiumBisulfate() : "-"}</td>
+            <td>
+              {hasAllValues ? calculateTotalPh() : "-"}
+              {/* <svg
+              width="20"
+              fill="#fff"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 125"
+            >
+              <path d="M36 6c-3.29 0-6 2.71-6 6v10h-6c-3.29 0-6 2.71-6 6v60c0 3.29 2.71 6 6 6h40c3.29 0 6-2.71 6-6V78h6c3.29 0 6-2.71 6-6V26a2 2 0 00-.594-1.406l-18-18A2 2 0 0062 6H44a2 2 0 100 4h16v16a2 2 0 002 2h16v44c0 1.143-.857 2-2 2H36c-1.143 0-2-.857-2-2V12c0-1.143.857-2 2-2a2 2 0 100-4zm28 6.813L75.188 24H64V12.812zM24 26h6v46c0 3.29 2.71 6 6 6h30v10c0 1.143-.857 2-2 2H24c-1.143 0-2-.857-2-2V28c0-1.143.857-2 2-2z" />
+            </svg> */}
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
