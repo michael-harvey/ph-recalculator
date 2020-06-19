@@ -28,7 +28,7 @@ InputField.propTypes = {
   id: PropTypes.string,
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired, // fix proptype
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
 };
