@@ -10,9 +10,9 @@ let id = 0;
 const initialState = [
   {
     id,
-    ph: 0,
-    salinity: 0,
-    temperature: 0,
+    ph: "",
+    salinity: "",
+    temperature: "",
   },
 ];
 
