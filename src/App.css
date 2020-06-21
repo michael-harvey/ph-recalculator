@@ -7,18 +7,9 @@
   --dark-blue: hsla(224, 61%, 16%, 1);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-}
-
 h1 {
   font-size: 100px;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 a {
@@ -52,6 +43,7 @@ input {
 
 input[type="number"] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
 label {
@@ -76,14 +68,14 @@ label {
 }
 
 button {
+  appearance: none;
   padding: 20px;
   font-size: 20px;
   color: var(--light-green);
   font-weight: bold;
-  background-color: transparent;
   border: 3px solid var(--light-green);
   border-radius: 10px;
-  appearance: none;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -93,7 +85,7 @@ button + button {
 
 button:hover {
   border-color: var(--light-purple);
-  color: white;
+  color: var(--white);
 }
 
 table {
@@ -104,4 +96,8 @@ table {
 th {
   width: 25%;
   text-align: left;
+}
+
+footer {
+  margin-top: 50px;
 }
