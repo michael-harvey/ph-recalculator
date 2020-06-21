@@ -1,11 +1,10 @@
 /* color palette used: https://coolors.co/89d2dc-6564db-232ed1-101d42-0d1317 */
 
 :root {
-  --middle-blue: hsla(187, 54%, 70%, 1);
-  --slate-blue: hsla(241, 62%, 63%, 1);
-  --persian-blue: hsla(236, 71%, 48%, 1);
-  --oxford-blue: hsla(224, 61%, 16%, 1);
-  --rich-black-fogra-29: hsla(204, 28%, 7%, 1);
+  --white: hsla(255, 100%, 100%, 1);
+  --light-green: hsla(187, 54%, 70%, 1);
+  --light-purple: hsla(241, 62%, 63%, 1);
+  --dark-blue: hsla(224, 61%, 16%, 1);
 }
 
 h1,
@@ -22,23 +21,31 @@ h1 {
   margin-bottom: 0;
 }
 
+a {
+  color: var(--light-purple);
+}
+
+a:hover {
+  color: var(--white);
+}
+
 body {
   width: 1000px;
   max-width: 100%;
   margin: 50px auto;
   padding: 20px;
   font-size: 18px;
-  color: var(--middle-blue);
-  background-color: var(--oxford-blue);
+  color: var(--light-green);
+  background-color: var(--dark-blue);
 }
 
 input {
   padding: 20px;
   font-size: 20px;
-  color: white;
+  color: var(--white);
   font-weight: bold;
   background-color: transparent;
-  border: 3px solid var(--slate-blue);
+  border: 3px solid var(--light-purple);
   border-radius: 10px;
   appearance: none;
 }
@@ -50,7 +57,7 @@ input[type="number"] {
 label {
   margin-bottom: 10px;
   font-weight: bold;
-  color: white;
+  color: var(--white);
 }
 
 .field {
@@ -71,10 +78,10 @@ label {
 button {
   padding: 20px;
   font-size: 20px;
-  color: var(--middle-blue);
+  color: var(--light-green);
   font-weight: bold;
   background-color: transparent;
-  border: 3px solid var(--middle-blue);
+  border: 3px solid var(--light-green);
   border-radius: 10px;
   appearance: none;
   cursor: pointer;
@@ -85,7 +92,7 @@ button + button {
 }
 
 button:hover {
-  border-color: var(--slate-blue);
+  border-color: var(--light-purple);
   color: white;
 }
 
