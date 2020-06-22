@@ -19,6 +19,18 @@ const initialState = [
 
 function App() {
   const [fields, setFields] = useState(initialState);
+
+  function addField() {
+    setFields([...fields, ...initialState]);
+  }
+
+  function removeField() {
+    if (!fields.length) return;
+    const fieldsCopy = fields.slice(0, fields.length - 1);
+
+    setFields(fieldsCopy);
+  }
+
   return (
     <div className="App">
       <h1>pH Recalculator</h1>
@@ -30,13 +42,9 @@ function App() {
       {fields.length &&
         fields.map((field) => <FieldGroup key={field.id} {...field} />)}
 
-      <button onClick={() => setFields([...fields, ...initialState])}>
-        Add field group
-      </button>
+        <button onClick={() => addField()}>Add field group</button>
 
-      <button onClick={() => setFields([...fields, ...initialState])}>
-        Remove field group
-      </button>
+        <button onClick={() => removeField()}>Remove field group</button>
 
       <footer>
         <p>
