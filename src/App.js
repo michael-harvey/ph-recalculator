@@ -39,7 +39,7 @@ function App() {
         <sub>T</sub>
       </p>
 
-      {fields.length &&
+        {!!fields.length &&
         fields.map((field) => <FieldGroup key={field.id} {...field} />)}
 
         <button onClick={() => addField()}>Add field group</button>
