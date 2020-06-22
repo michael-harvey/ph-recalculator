@@ -52,7 +52,7 @@ function App() {
           <span role="img" aria-label="heart emoji">
             ❤️
           </span>{" "}
-          by Emily Joy Frost - Oceanus Environmental
+          <a href="//oceanusenvironmental.com">Oceanus Environmental</a>
         </p>
       </footer>
     </div>
