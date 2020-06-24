@@ -18,6 +18,7 @@ function App() {
   }
 
   function removeField() {
+    // Keep at least one field group
     if (fields.length === 1) return;
     const fieldsCopy = fields.slice(0, fields.length - 1);
 
@@ -34,10 +35,9 @@ function App() {
         </p>
 
         {!!fields.length &&
-          fields.map((field) => <FieldGroup key={field.id} {...field} />)}
+          fields.map((field, index) => <FieldGroup key={index} {...field} />)}
 
         <button onClick={() => addField()}>Add field group</button>
-
         <button onClick={() => removeField()}>Remove field group</button>
       </main>
 
