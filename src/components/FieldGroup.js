@@ -111,7 +111,10 @@ function FieldGroup(props) {
   );
 }
 
-// TODO: add proptypes
-InputField.propTypes = {};
+InputField.propTypes = {
+  ph: PropTypes.number,
+  salinity: PropTypes.number,
+  temperature: PropTypes.number,
+};
 
 export default FieldGroup;
