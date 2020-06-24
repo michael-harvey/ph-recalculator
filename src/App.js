@@ -17,9 +17,11 @@ function App() {
     setFields([...fields, ...initialState]);
   }
 
+  const isLastField = fields.length === 1;
+
   function removeField() {
     // Keep at least one field group
-    if (fields.length === 1) return;
+    if (isLastField) return;
     const fieldsCopy = fields.slice(0, fields.length - 1);
 
     setFields(fieldsCopy);
@@ -38,7 +40,9 @@ function App() {
           fields.map((field, index) => <FieldGroup key={index} {...field} />)}
 
         <button onClick={() => addField()}>Add field group</button>
-        <button onClick={() => removeField()}>Remove field group</button>
+        <button onClick={() => removeField()} disabled={isLastField}>
+          Remove field group
+        </button>
       </main>
 
       <footer>
