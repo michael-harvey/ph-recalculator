@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import InputField from "./InputField";
 
 // TODO: copy to clipboard for 'Total pH'
-// TODO: add remove field group functionality
 // TODO: move calculation functions to external utilities
 function FieldGroup(props) {
   const [ph, setPh] = useState(props.ph);
