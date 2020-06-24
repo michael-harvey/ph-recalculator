@@ -7,9 +7,27 @@
   --dark-blue: hsla(224, 61%, 16%, 1);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 1200px;
+  max-width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 18px;
+  color: var(--light-green);
+  background-color: var(--dark-blue);
+}
+
 h1 {
-  font-size: 100px;
+  font-size: clamp(40px, 10vw, 100px);
   margin: 0;
+}
+
+p {
+  line-height: 1.5;
 }
 
 a {
@@ -18,16 +36,6 @@ a {
 
 a:hover {
   color: var(--white);
-}
-
-body {
-  width: 1000px;
-  max-width: 100%;
-  margin: 50px auto;
-  padding: 20px;
-  font-size: 18px;
-  color: var(--light-green);
-  background-color: var(--dark-blue);
 }
 
 input {
@@ -39,11 +47,6 @@ input {
   border: 3px solid var(--light-purple);
   border-radius: 10px;
   appearance: none;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
 }
 
 label {
@@ -61,9 +64,9 @@ label {
   margin: 50px 0;
 }
 
-.fieldgroup__wrapper {
+form {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-gap: 30px;
 }
 
@@ -79,8 +82,9 @@ button {
   cursor: pointer;
 }
 
-button + button {
-  margin-left: 30px;
+button {
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 button:hover {
@@ -88,16 +92,36 @@ button:hover {
   color: var(--white);
 }
 
-table {
-  width: 100%;
-  margin: 30px 0 80px 0;
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin: 30px 0;
+  padding: 0;
+  list-style-type: none;
 }
 
-th {
-  width: 25%;
-  text-align: left;
+li {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  line-height: 1.5;
 }
 
 footer {
   margin-top: 50px;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    margin: 50px auto;
+  }
+
+  button {
+    width: auto;
+    margin: 0;
+  }
+
+  button + button {
+    margin-left: 30px;
+  }
 }
