@@ -51,7 +51,7 @@ function FieldGroup(props) {
 
   return (
     <div className="fieldgroup">
-      <form className="fieldgroup__wrapper" noValidate>
+      <form noValidate>
         <InputField
           label="pH<sub>NIST/NBS</sub>"
           id="ph"
@@ -61,6 +61,7 @@ function FieldGroup(props) {
           value={ph}
           placeholder="Enter pH"
           onChange={(e) => setPh(parseFloat(e.target.value))}
+          pattern={"[0-9]*"}
         />
 
         <InputField
@@ -71,6 +72,7 @@ function FieldGroup(props) {
           value={salinity}
           placeholder="Enter salinity"
           onChange={(e) => setSalinity(parseFloat(e.target.value))}
+          pattern={"[0-9]*"}
         />
 
         <InputField
@@ -81,6 +83,7 @@ function FieldGroup(props) {
           value={temperature}
           placeholder="Enter temperature"
           onChange={(e) => setTemperature(parseFloat(e.target.value))}
+          pattern={"[0-9]*"}
         />
       </form>
 

@@ -18,7 +18,7 @@ function App() {
   }
 
   function removeField() {
-    if (!fields.length) return;
+    if (fields.length === 1) return;
     const fieldsCopy = fields.slice(0, fields.length - 1);
 
     setFields(fieldsCopy);
