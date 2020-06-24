@@ -92,6 +92,11 @@ button:hover {
   color: var(--white);
 }
 
+button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
 ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
