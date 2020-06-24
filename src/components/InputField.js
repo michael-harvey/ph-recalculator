@@ -26,7 +26,6 @@ function InputField({
         onChange={onChange}
         pattern={pattern}
       />
-      {/* <span className="field__error"></span> */}
     </div>
   );
 }
