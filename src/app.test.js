@@ -33,5 +33,18 @@ test("displays expected total ph from values", () => {
   expect(queryByTestId("total-ph")).toHaveTextContent("7.975298869024447");
 });
 
-// TODO: test removal of fields
-// TODO: test ph values based on field inputs
+test("adds and removes additional fields", () => {
+  const { getByText, getAllByTestId } = render(<App />);
+
+  expect(getByText("Remove field group")).toBeDisabled();
+
+  fireEvent.click(getByText("Add field group"));
+
+  expect(getByText("Remove field group")).not.toBeDisabled();
+
+  expect(getAllByTestId("field-group")).toHaveLength(2);
+
+  fireEvent.click(getByText("Remove field group"));
+
+  expect(getAllByTestId("field-group")).toHaveLength(1);
+});
