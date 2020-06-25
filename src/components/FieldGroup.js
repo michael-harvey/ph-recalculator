@@ -91,19 +91,27 @@ function FieldGroup(props) {
       <ul>
         <li>
           <b>Ionic strength:</b>
-          {hasAllValues ? calculateIonicStrength() : "-"}
+          <span data-testid="ionic-strength">
+            {hasAllValues ? calculateIonicStrength() : "-"}
+          </span>
         </li>
         <li>
           <b>SO4 total:</b>
-          {hasAllValues ? calculateSO4Total() : "-"}
+          <span data-testid="so4-total">
+            {hasAllValues ? calculateSO4Total() : "-"}
+          </span>
         </li>
         <li>
           <b>Potassium bisulfate:</b>
-          {hasAllValues ? calculatePotassiumBisulfate() : "-"}
+          <span data-testid="potassium-bisulfate">
+            {hasAllValues ? calculatePotassiumBisulfate() : "-"}
+          </span>
         </li>
         <li>
           <b>Total pH:</b>
-          {hasAllValues ? calculateTotalPh() : "-"}
+          <span data-testid="total-ph">
+            {hasAllValues ? calculateTotalPh() : "-"}
+          </span>
         </li>
       </ul>
     </div>
