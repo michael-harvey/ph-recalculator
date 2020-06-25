@@ -51,7 +51,7 @@ function FieldGroup(props) {
   const hasAllValues = !!(ph && salinity && temperature);
 
   return (
-    <div className="fieldgroup">
+    <div className="fieldgroup" data-testid="field-group">
       <form noValidate>
         <InputField
           label="pH<sub>NIST/NBS</sub>"
