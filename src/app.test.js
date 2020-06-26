@@ -12,25 +12,21 @@ test("displays expected total ph from values", () => {
   const { getByLabelText, queryByTestId } = render(<App />);
 
   fireEvent.change(getByLabelText(/ph/i), {
-    target: { value: "8.1" },
+    target: { value: "7.9" },
   });
 
   fireEvent.change(getByLabelText(/salinity/i), {
-    target: { value: "35" },
+    target: { value: "33" },
   });
 
   fireEvent.change(getByLabelText(/temperature/i), {
-    target: { value: "18" },
+    target: { value: "20" },
   });
 
-  expect(queryByTestId("ionic-strength")).toHaveTextContent(
-    "0.7227631953981292"
-  );
-  expect(queryByTestId("so4-total")).toHaveTextContent("0.028235434132860126");
-  expect(queryByTestId("potassium-bisulfate")).toHaveTextContent(
-    "0.027377471695080157"
-  );
-  expect(queryByTestId("total-ph")).toHaveTextContent("7.975298869024447");
+  expect(queryByTestId("ionic-strength")).toHaveTextContent("0.680");
+  expect(queryByTestId("so4-total")).toHaveTextContent("0.027");
+  expect(queryByTestId("potassium-bisulfate")).toHaveTextContent("0.025");
+  expect(queryByTestId("total-ph")).toHaveTextContent("7.877");
 });
 
 test("adds and removes additional fields", () => {
