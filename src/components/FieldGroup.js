@@ -9,9 +9,6 @@ function FieldGroup(props) {
   const [salinity, setSalinity] = useState(props.salinity);
   const [temperature, setTemperature] = useState(props.temperature);
 
-  // correct pH (NIST/NBS) levels
-  const calculatePh = () => ph + (temperature - 25) * 0.0159;
-
   // convert celcius to kelvin units
   const calculateKelvin = () => temperature + 273.15;
 
@@ -42,13 +39,16 @@ function FieldGroup(props) {
   }
 
   const calculateTotalPh = () => {
-    return (
-      calculatePh() -
-      Math.log10(calculateSO4Total() / calculatePotassiumBisulfate())
-    );
+    return ph - Math.log10(calculateSO4Total() / calculatePotassiumBisulfate());
   };
 
   const hasAllValues = !!(ph && salinity && temperature);
+
+  function formatFloatValue({ value, toDecimalPlace }) {
+    if (!hasAllValues) return "-";
+
+    return Number.parseFloat(value).toFixed(toDecimalPlace);
+  }
 
   return (
     <div className="fieldgroup" data-testid="field-group">
@@ -92,25 +92,37 @@ function FieldGroup(props) {
         <li>
           <b>Ionic strength:</b>
           <span data-testid="ionic-strength">
-            {hasAllValues ? calculateIonicStrength() : "-"}
+            {formatFloatValue({
+              value: calculateIonicStrength(),
+              toDecimalPlace: 3,
+            })}
           </span>
         </li>
         <li>
           <b>SO4 total:</b>
           <span data-testid="so4-total">
-            {hasAllValues ? calculateSO4Total() : "-"}
+            {formatFloatValue({
+              value: calculateSO4Total(),
+              toDecimalPlace: 3,
+            })}
           </span>
         </li>
         <li>
           <b>Potassium bisulfate:</b>
           <span data-testid="potassium-bisulfate">
-            {hasAllValues ? calculatePotassiumBisulfate() : "-"}
+            {formatFloatValue({
+              value: calculatePotassiumBisulfate(),
+              toDecimalPlace: 3,
+            })}
           </span>
         </li>
         <li>
           <b>Total pH:</b>
           <span data-testid="total-ph">
-            {hasAllValues ? calculateTotalPh() : "-"}
+            {formatFloatValue({
+              value: calculateTotalPh(),
+              toDecimalPlace: 3,
+            })}
           </span>
         </li>
       </ul>
