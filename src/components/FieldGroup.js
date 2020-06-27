@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import InputField from "./InputField";
 
 // TODO: copy to clipboard for 'Total pH'
-// TODO: move calculation functions to external utilities
 function FieldGroup(props) {
   const [ph, setPh] = useState(props.ph);
   const [salinity, setSalinity] = useState(props.salinity);
@@ -15,10 +14,8 @@ function FieldGroup(props) {
   const calculateIonicStrength = () =>
     (19.924 * salinity) / (1000 - 1.005 * salinity);
 
-  // calculate sulfate (SO4)
   const calculateSO4Total = () => (0.14 / 96.062) * (salinity / 1.80655);
 
-  // calculate potassium bisulfate
   function calculatePotassiumBisulfate() {
     return Math.exp(
       -4276.1 / calculateKelvin() +
